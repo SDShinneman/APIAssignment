@@ -12,7 +12,7 @@ data = urllib2.urlopen(https://foia.state.gov/searchapp/Search/SubmitSimpleQuery
 result = json.loads(data)
 
 def clean_json(json):
-	dirty_json = urllib2.urlopen(https://foia.state.gov/searchapp/Search/SubmitSimpleQuery?_dc=1446475214687&searchText=*&beginDate=&endDate=&collectionMatch=false&postedBeginDate=&postedEndDate=&caseNumber=F-2014-20439&page=1&start=1&limit=500000).read()
+    dirty_json = urllib2.urlopen(https://foia.state.gov/searchapp/Search/SubmitSimpleQuery?_dc=1446475214687&searchText=*&beginDate=&endDate=&collectionMatch=false&postedBeginDate=&postedEndDate=&caseNumber=F-2014-20439&page=1&start=1&limit=500000).read()
     valid_json = clean_json(dirty_json)
     return re.sub(r'new Date\(.*?\)', '""', json)
 
